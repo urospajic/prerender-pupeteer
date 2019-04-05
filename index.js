@@ -14,7 +14,7 @@ app.get('/prerender', async (req, res, next) => {
     }
 });
 
-app.listen(8080, () => console.log('Server started. Press Ctrl+C to quit'));
+app.listen(8888, () => console.log('Server started. Press Ctrl+C to quit'));
 
 async function ssr(url) {
     const browser = await puppeteer.launch({ headless: true });
