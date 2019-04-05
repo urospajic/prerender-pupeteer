@@ -1,0 +1,23 @@
+{
+  "name": "prerender-pupeteer",
+  "version": "1.0.0",
+  "description": "Small prerender webserver for client side JS web application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urospajic/prerender-pupeteer.git"
+  },
+  "author": "Uros Pajic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/urospajic/prerender-pupeteer/issues"
+  },
+  "homepage": "https://github.com/urospajic/prerender-pupeteer#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "puppeteer": "^1.14.0"
+  }
+}
