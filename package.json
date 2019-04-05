@@ -18,6 +18,7 @@
   "homepage": "https://github.com/urospajic/prerender-pupeteer#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "puppeteer": "^1.14.0"
+    "puppeteer": "^1.14.0",
+    "redis": "^2.8.0"
   }
 }
