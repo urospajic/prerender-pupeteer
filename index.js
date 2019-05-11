@@ -16,15 +16,6 @@ client.on('error', function (err) {
     console.log('Redis client - Something went wrong ' + err);
 });
 
-// client.set('my test key', 'my test value', redis.print);
-// client.get('my test key', function (error, result) {
-//     if (error) {
-//         console.log(error);
-//         throw error;
-//     }
-//     console.log('GET result ->' + result);
-// });
-
 app.get('/prerender', async (req, res, next) => {
     try {
         const html = await ssr(req.query.path);
@@ -48,11 +39,17 @@ async function ssr(url) {
     }
     console.log(`Page ${url} not found in cache, rendering`);
     const browser = await puppeteer.launch({ headless: true });
+    console.log(`Pupeteer created`);
     const page = await browser.newPage();
+    console.log(`Browser created`);
     await page.goto(url);
+    console.log(`Page opened`);
     await page.waitFor(waitTime);
+    console.log(`Page load completed`);
     const html = await page.content();
+    console.log(`Page content collected`);
     await browser.close();
+    console.log(`Browser closed`);
     if (redisEnabled) {
         console.log(`Page ${url} storing in cache`);
         await saveToRedis(url, html);
